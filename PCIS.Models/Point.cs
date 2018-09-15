@@ -22,13 +22,25 @@ namespace PCIS.Models
         }
 
         /// <summary>
-        /// The x coordinate
+        /// Gets or sets the x coordinate
         /// </summary>
         public double X { get; set; }
 
         /// <summary>
-        /// The y coordinate
+        /// Gets or sets the y coordinate
         /// </summary>
         public double Y { get; set; }
+
+        /// <summary>
+        /// Gets distance between two points
+        /// </summary>
+        /// <param name="one">First point</param>
+        /// <param name="two">Second point</param>
+        /// <returns>The distance</returns>
+        public static double Distance(Point one, Point two)
+        {
+            double distance = System.Math.Sqrt(System.Math.Pow(one.X - two.X, 2) + System.Math.Pow(one.Y - two.Y, 2));
+            return distance;
+        }
     }
 }
