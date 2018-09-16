@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCIS", "PCIS\PCIS.csproj", "{8EEBE22A-2DD2-4ED9-A158-14352C0E251C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCIS.Models", "PCIS.Models\PCIS.Models.csproj", "{D72AF9F2-1EF7-4EA7-8335-C97A3079F671}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8EEBE22A-2DD2-4ED9-A158-14352C0E251C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EEBE22A-2DD2-4ED9-A158-14352C0E251C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EEBE22A-2DD2-4ED9-A158-14352C0E251C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D72AF9F2-1EF7-4EA7-8335-C97A3079F671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D72AF9F2-1EF7-4EA7-8335-C97A3079F671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D72AF9F2-1EF7-4EA7-8335-C97A3079F671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D72AF9F2-1EF7-4EA7-8335-C97A3079F671}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

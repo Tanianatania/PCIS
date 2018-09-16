@@ -1,47 +1,52 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+// <copyright file="Program.cs" company="LNU">
+// All rights reserved.
+// </copyright>
+// <author>TORV team</author>
 
 namespace PCIS
 {
-    interface iShape
-    {
-        double getSqaure();
-        double getPerimetr();
-    }
-    class Circle:iShape
-    {
-        public int x { get; set; }
-        public int y { get; set; }
-        public int radius { get; set; }
+    using Models;
+    using Models.Interfaces;
 
-        public double getSqaure()
-        {
-            double res = Math.PI * radius * radius;
-            return res;
-        }
-        
-        public double getPerimetr()
-        {
-            double res = 2 * Math.PI * radius;
-            return res;
-        }
-    }
-    class Square:iShape
+    /// <summary>
+    /// Initial point of app. Variant 1
+    /// </summary>
+    internal class Program
     {
-        public double left_upper_angle { get; set; }
-        public double right_bottom_angle { get; set; }
+        /// <summary>
+        /// Starting app
+        /// </summary>
+        private static void Main()
+        {
+            IShape[] shapes = 
+            {
+                new Circle(0, 0, 3),
+                new Square(0, 0, 10, 10),
+                new Triangle(new Point(0, 0), new Point(0, 10), new Point(10, 0))
+            };
 
-        
-    }
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            
+            foreach (var shape in shapes)
+            {
+                string name;
+                if (shape is Circle)
+                {
+                    name = "Circle";
+                }
+                else if (shape is Square)
+                {
+                    name = "Square";
+                }
+                else if (shape is Triangle)
+                {
+                    name = "Triangle";
+                }
+                else
+                {
+                    name = "Unknown";
+                }
+
+                System.Console.WriteLine($"{name} | Perimeter: {shape.GetPerimeter():00.00}\tSquare: {shape.GetSquare():00.00}");
+            }
         }
     }
 }
