@@ -1,16 +1,51 @@
-﻿namespace PCIS
+﻿// <copyright file="Program.cs" company="LNU">
+// All rights reserved.
+// </copyright>
+// <author>TORV team</author>
+
+namespace PCIS
 {
     using Models;
     using Models.Interfaces;
-    class Program
+
+    /// <summary>
+    /// Initial point of app. Variant 1
+    /// </summary>
+    internal class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Starting app
+        /// </summary>
+        private static void Main()
         {
-            IShape[] shapes = { new Circle(0, 0, 3), new Square(0, 0, 10, 10), new Triangle(new Point(0, 0), new Point(0, 10), new Point(10, 0)) };
+            IShape[] shapes = 
+            {
+                new Circle(0, 0, 3),
+                new Square(0, 0, 10, 10),
+                new Triangle(new Point(0, 0), new Point(0, 10), new Point(10, 0))
+            };
 
             foreach (var shape in shapes)
             {
-                System.Console.WriteLine($"Perimeter: {shape.GetPerimeter()}\tSquare: {shape.GetSquare()}");
+                string name;
+                if (shape is Circle)
+                {
+                    name = "Circle";
+                }
+                else if (shape is Square)
+                {
+                    name = "Square";
+                }
+                else if (shape is Triangle)
+                {
+                    name = "Triangle";
+                }
+                else
+                {
+                    name = "Unknown";
+                }
+
+                System.Console.WriteLine($"{name} | Perimeter: {shape.GetPerimeter():00.00}\tSquare: {shape.GetSquare():00.00}");
             }
         }
     }

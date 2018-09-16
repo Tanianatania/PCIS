@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicFileManager.cs" />
+    <Compile Include="BasicFileManagerIDisposable.cs" />
     <Compile Include="Circle.cs" />
     <Compile Include="Interfaces\IFileManager.cs" />
     <Compile Include="Interfaces\IShape.cs" />
