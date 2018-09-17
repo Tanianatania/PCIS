@@ -5,6 +5,7 @@
 
 namespace PCIS.Models
 {
+    using System;
     using Interfaces;
 
     /// <summary>
@@ -45,6 +46,10 @@ namespace PCIS.Models
                 if (value > 0)
                 {
                     this.radius = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Radius can`t be less or equal than 0");
                 }
             }
         }
