@@ -5,6 +5,7 @@
 
 namespace PCIS.Models
 {
+    using System;
     using Interfaces;
 
     /// <summary>
@@ -35,6 +36,10 @@ namespace PCIS.Models
         /// <param name="third">The third point</param>
         public Triangle(Point first, Point second, Point third)
         {
+            if (Point.OnOneLine(first, second, third))
+            {
+                throw new ArgumentException("This point located in one line");
+            }
             this.first = first;
             this.second = second;
             this.third = third;

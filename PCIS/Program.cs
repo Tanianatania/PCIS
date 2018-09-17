@@ -21,8 +21,8 @@ namespace PCIS
             IShape[] shapes = 
             {
                 new Circle(0, 0, 3),
-                new Square(0, 0, 10, 10),
-                new Triangle(new Point(0, 0), new Point(0, 10), new Point(10, 0))
+                new Square( 0, 5,5, 0),
+                new Triangle(new Point(0, 0), new Point(0, 1), new Point(1, 2))
             };
 
             foreach (var shape in shapes)

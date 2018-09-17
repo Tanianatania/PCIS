@@ -5,6 +5,8 @@
 
 namespace PCIS.Models
 {
+    using System;
+
     /// <summary>
     /// The instance of point
     /// </summary>
@@ -39,8 +41,38 @@ namespace PCIS.Models
         /// <returns>The distance</returns>
         public static double Distance(Point one, Point two)
         {
+            if (one == null || two == null)
+            {
+                throw new ArgumentNullException("Invalid argument");
+            }
+
             double distance = System.Math.Sqrt(System.Math.Pow(one.X - two.X, 2) + System.Math.Pow(one.Y - two.Y, 2));
             return distance;
+        }
+
+        /// <summary>
+        /// Checks if points are located on one line
+        /// </summary>
+        /// <param name="points">Points to check</param>
+        /// <returns>True, if Points are on one line</returns>
+        public static bool OnOneLine(params Point[] points)
+        {
+            if (points.Length <= 2)
+            {
+                return true;
+            }
+
+            Point p1 = points[0], p2 = points[1];
+
+            for (int i = 2; i < points.Length; i++)
+            {
+                if ((p2.X - p1.X) * (points[i].Y - p1.Y) != (points[i].X - p1.X) * (p2.Y - p1.Y))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

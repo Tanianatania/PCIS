@@ -5,6 +5,7 @@
 
 namespace PCIS.Models
 {
+    using System;
     using Interfaces;
 
     /// <summary>
@@ -33,6 +34,20 @@ namespace PCIS.Models
         {
             this.leftTopPoint = new Point(ltx, lty);
             this.rightDownPoint = new Point(rdx, rdy);
+            if (this.LeftTopPoint.X > this.RightDownPoint.X && this.LeftTopPoint.Y < this.RightDownPoint.Y)
+            {
+                throw new ArgumentException("Invalid points' coordinates");
+            }
+
+            if (this.LeftTopPoint.X > this.RightDownPoint.X && this.LeftTopPoint.Y > this.RightDownPoint.Y)
+            {
+                throw new ArgumentException("Invalid points' coordinates");
+            }
+
+            if (this.LeftTopPoint.X < this.RightDownPoint.X && this.LeftTopPoint.Y < this.RightDownPoint.Y)
+            {
+                throw new ArgumentException("Invalid points' coordinates");
+            }
         }
 
         /// <summary>
