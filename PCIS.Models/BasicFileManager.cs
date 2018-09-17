@@ -5,6 +5,7 @@
 
 namespace PCIS.Models
 {
+    using System;
     using System.IO;
     using Interfaces;
 
@@ -42,6 +43,11 @@ namespace PCIS.Models
         /// <param name="type">Operations type</param>
         public BasicFileManager(string path, IOType type)
         {
+            if (path==null || path==string.Empty)
+            {
+                throw new ArgumentException("Incorrect path string");
+            }
+
             if (type == IOType.Reader)
             {
                 this.reader = new StreamReader(path);
@@ -59,6 +65,16 @@ namespace PCIS.Models
         /// <param name="writePath">File for write operations</param>
         public BasicFileManager(string readPath, string writePath)
         {
+            if (readPath == null || readPath == string.Empty)
+            {
+                throw new ArgumentException("Incorrect readPath string");
+            }
+
+            if (writePath == null || writePath == string.Empty)
+            {
+                throw new ArgumentException("Incorrect writePath string");
+            }
+
             this.reader = new StreamReader(readPath);
             this.writer = new StreamWriter(writePath);
         }
