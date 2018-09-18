@@ -40,6 +40,7 @@ namespace PCIS.Models
             {
                 throw new ArgumentException("This point located in one line");
             }
+
             this.first = first;
             this.second = second;
             this.third = third;

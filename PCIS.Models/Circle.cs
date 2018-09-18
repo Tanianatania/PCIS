@@ -59,7 +59,7 @@ namespace PCIS.Models
         /// </summary>
         public Point Center
         {
-            get => center;
+            get => this.center;
         }
 
         /// <summary>

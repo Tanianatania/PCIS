@@ -43,7 +43,7 @@ namespace PCIS.Models
         /// <param name="type">Operations type</param>
         public BasicFileManager(string path, IOType type)
         {
-            if (path==null || path==string.Empty)
+            if (path == null || path == string.Empty)
             {
                 throw new ArgumentException("Incorrect path string");
             }

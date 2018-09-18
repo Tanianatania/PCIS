@@ -18,11 +18,11 @@ namespace PCIS
         /// </summary>
         private static void Main()
         {
-            IShape[] shapes = 
+            IShape[] shapes =
             {
                 new Circle(0, 0, 3),
-                new Square( 0, 5,5, 0),
-                new Triangle(new Point(0, 0), new Point(0, 1), new Point(1, 2))
+                new Square(0, 5, 5, 0),
+                new Triangle(new Point(0, 0), new Point(1, 1), new Point(3, 2))
             };
 
             foreach (var shape in shapes)
