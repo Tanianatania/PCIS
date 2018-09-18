@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCIS", "PCIS\PCIS.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCIS.Models", "PCIS.Models\PCIS.Models.csproj", "{D72AF9F2-1EF7-4EA7-8335-C97A3079F671}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCIS.Collections", "PCIS.Collections\PCIS.Collections.csproj", "{F9826728-7F0A-4766-8D21-02604CDB7608}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D72AF9F2-1EF7-4EA7-8335-C97A3079F671}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D72AF9F2-1EF7-4EA7-8335-C97A3079F671}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D72AF9F2-1EF7-4EA7-8335-C97A3079F671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9826728-7F0A-4766-8D21-02604CDB7608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9826728-7F0A-4766-8D21-02604CDB7608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9826728-7F0A-4766-8D21-02604CDB7608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9826728-7F0A-4766-8D21-02604CDB7608}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
