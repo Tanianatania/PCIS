@@ -46,8 +46,8 @@ namespace PCIS.Models
             {
                 if (disposing)
                 {
-                    this.reader.Dispose();
-                    this.writer.Dispose();
+                    this.reader?.Dispose();
+                    this.writer?.Dispose();
                 }
 
                 this.disposedValue = true;
