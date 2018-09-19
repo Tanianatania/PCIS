@@ -21,5 +21,12 @@ namespace PCIS.Models.Interfaces
         /// </summary>
         /// <returns>The square of the shape</returns>
         double GetSquare();
+
+
+        /// <summary>
+        /// Checks or figure belongs to 3 quarters
+        /// </summary>
+        /// <returns>Is it true</returns>
+        bool IsQuarter3();
     }
 }

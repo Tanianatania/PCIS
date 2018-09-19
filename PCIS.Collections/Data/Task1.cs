@@ -48,25 +48,71 @@ namespace PCIS.Collections.Data
         }
     }
 
+    
+
     public static class Task1
     {
+        static List<IShape> list = new List<IShape>();
+        static int count;
+        static List<IShape> result = new List<IShape>();
+        static List<IShape> totall_result = new List<IShape>();
+
+        public static void sort()
+        {
+            IShape temp;
+
+            for (int i=0; i<count-1; i++)
+            {
+                for (int j=i+1; j<count; j++)
+                {
+                    if (list[i].GetSquare() > list[j].GetSquare())
+                    {
+                        temp = list[i];
+                        list[i] = list[j];
+                        list[j] = temp;
+                    }
+                }
+            }
+        }
+
         public static void Run()
         {
-            List<IShape> list = new List<IShape>();
+     
+
             using (var fm = new BasicFileManager(@"C:\Users\Hp\Desktop\PCIS\PCIS.Collections\Data\Data.txt", BasicFileManager.IOType.Reader))
             {
                 Parser p = new Parser();
-                int count = int.Parse(fm.ReadLine());
+                count = int.Parse(fm.ReadLine());
                 for (int i = 0; i < count; i++)
                 {
                     string data = fm.ReadLine();
                     Console.WriteLine(data);
                     list.Add(p.Parse(data));
                 }
-
-
-                
             }
+
+            sort();
+
+            using (var fw = new BasicFileManager(@"C:\Users\Hp\Desktop\PCIS\PCIS.Collections\Data\File1.txt", BasicFileManager.IOType.Writer))
+            {
+               string st;
+               for (int i=0; i<count; i++)
+                {
+
+                }
+                                 
+            }
+
+            var result =
+                from res in list
+                where res.IsQuarter3() == true
+                select res;
+
+
+            var totall_result = 
+                from u in result
+                orderby u.GetPerimeter() descending
+                select u;
         }
     }
 }

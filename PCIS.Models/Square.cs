@@ -83,5 +83,18 @@ namespace PCIS.Models
             double square = width * height;
             return square;
         }
+
+        /// <summary>
+        /// Checks or figure belongs to 3 quarters
+        /// </summary>
+        /// <returns>Is it true</returns>
+        public bool IsQuarter3()
+        {
+            if (this.leftTopPoint.Y<0 && this.RightDownPoint.X<=0 && this.RightDownPoint.Y<0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
