@@ -49,6 +49,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PCIS.Collections\PCIS.Collections.csproj">
+      <Project>{f9826728-7f0a-4766-8d21-02604cdb7608}</Project>
+      <Name>PCIS.Collections</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PCIS.Models\PCIS.Models.csproj">
       <Project>{d72af9f2-1ef7-4ea7-8335-c97a3079f671}</Project>
       <Name>PCIS.Models</Name>
