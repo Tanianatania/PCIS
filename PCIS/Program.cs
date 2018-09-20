@@ -16,7 +16,9 @@ namespace PCIS
         /// </summary>
         private static void Main()
         {
-            PCIS.Collections.Data.Task1.Run();
+            PCIS.Collections.Data.Task.RunTask1();
+
+            PCIS.Collections.Data.Task.RunTask2();
         }
     }
 }

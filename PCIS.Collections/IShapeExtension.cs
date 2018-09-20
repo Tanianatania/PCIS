@@ -1,10 +1,25 @@
-﻿using PCIS.Models.Interfaces;
+﻿// <copyright file="IShapeExtention.cs" company="LNU">
+// All rights reserved.
+// </copyright>
+// <author>Tania Gutiy/author>
+
+using PCIS.Models.Interfaces;
 using PCIS.Models;
 
 namespace PCIS.Collections
 {
+
+    /// <summary>
+    /// IShape extension
+    /// </summary>
     public static class IShapeExtension
     {
+
+        /// <summary>
+        /// check whether the item belongs 3 quarter
+        /// </summary>
+        /// <param name="shape"></param>
+        /// <returns>yes or no</returns>
         public static bool IsQuarter3(this IShape shape)
         {
             if (shape is Circle)

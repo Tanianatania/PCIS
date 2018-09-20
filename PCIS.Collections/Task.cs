@@ -1,4 +1,10 @@
-﻿using PCIS.Models;
+﻿// <copyright file="Task.cs" company="LNU">
+// All rights reserved.
+// </copyright>
+// <author>Tania Gutiy/author>
+
+
+using PCIS.Models;
 using PCIS.Models.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -8,8 +14,18 @@ using System.Threading.Tasks;
 
 namespace PCIS.Collections.Data
 {
+
+    /// <summary>
+    /// Class for parse to IShape
+    /// </summary>
     internal class Parser
     { 
+
+        /// <summary>
+        /// Parse string to IShape
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns> IShape element </returns>
         public IShape Parse(string str)
         {
             string[] fields = str.Split(' ');
@@ -49,13 +65,39 @@ namespace PCIS.Collections.Data
     }
     
 
-    public static class Task1
+    /// <summary>
+    /// Class to complete the tasks
+    /// </summary>
+    public static class Task
     {
+
+        /// <summary>
+        /// Count of Ishape elements
+        /// </summary>
         static int count=0;
+
+
+        /// <summary>
+        /// List of elements in 3 quarter
+        /// </summary>
         static List<IShape> result = new List<IShape>();
+
+
+        /// <summary>
+        /// Sort List of elements in quarter 
+        /// </summary>
         static List<IShape> totall_result = new List<IShape>();
+
+
+        /// <summary>
+        /// Initial list of IShape elements
+        /// </summary>
         static List<IShape> list = new List<IShape>();
 
+
+        /// <summary>
+        /// Sort IShape elements for growth
+        /// </summary>
         public static void sort()
         {
             IShape temp;
@@ -74,8 +116,13 @@ namespace PCIS.Collections.Data
             }
         }
 
-        public static void Run()
+
+        /// <summary>
+        /// Reading  from Data.txt, sort list, writing result in File1.txt
+        /// </summary>
+        public static void RunTask1()
         {
+
             using (var fm = new BasicFileManager(@"C:\Users\Hp\Desktop\PCIS\PCIS.Collections\Data\Data.txt", BasicFileManager.IOType.Reader))
             {
                 Parser p = new Parser();
@@ -113,16 +160,51 @@ namespace PCIS.Collections.Data
                                  
             }
 
+        }
+
+
+        /// <summary>
+        /// Select elements that is in 3 quarter and sot them by degeneration
+        /// </summary>
+        public static void RunTask2()
+        {
             var result =
                 from res in list
                 where res.IsQuarter3() == true
                 select res;
 
 
-            var totall_result = 
-                from u in result
+            List<IShape> totall_result =
+                (from u in result
                 orderby u.GetPerimeter() descending
-                select u;
+                select u).ToList();
+
+
+            using (var fw = new BasicFileManager(@"C:\Users\Hp\Desktop\PCIS\PCIS.Collections\Data\File2.txt", BasicFileManager.IOType.Writer))
+            {
+                for (int i = 0; i < totall_result.Count; i++)
+                {
+                    if (totall_result[i] is Circle)
+                    {
+                        Circle c = totall_result[i] as Circle;
+                        fw.WriteLine($"Circle: ({c.Center.X} {c.Center.Y}), radius: {c.Radius}");
+                        fw.WriteLine($"Perimeter: {c.GetPerimeter()}");
+                    }
+                    else if (totall_result[i] is Square)
+                    {
+                        Square c = totall_result[i] as Square;
+                        fw.WriteLine($"Square: ({c.LeftTopPoint.X} {c.LeftTopPoint.Y}), ({c.RightDownPoint.X} {c.RightDownPoint.Y})");
+                        fw.WriteLine($"Perimeter: {c.GetPerimeter()}");
+                    }
+                    else if (totall_result[i] is Triangle)
+                    {
+                        Triangle c = totall_result[i] as Triangle;
+                        fw.WriteLine($"Trianle: ({c.FirstPoint.X} {c.FirstPoint.Y}), ({c.SecondPoint.X} {c.SecondPoint.Y}), ({c.ThirdPoint.X} {c.ThirdPoint.Y})");
+                        fw.WriteLine($"Perimeter: {c.GetPerimeter()}");
+                    }
+                }
+
+            }
         }
     }
 }

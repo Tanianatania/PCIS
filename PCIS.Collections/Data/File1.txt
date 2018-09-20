@@ -1,11 +1,5 @@
-﻿
-Trianle: -1 0 0 1 1 0
-Trianle: 0 0 2 2 2 0
-Circle: (1 1), radius: 1
-Circle: (0 0), radius: 2
-Square: 0 5 5 0
 Trianle: (-1 0), (0 1), (1 0)
-Trianle: (0 0), (2 2), (2 0)
-Circle: (1 1), radius: 1
-Circle: (0 0), radius: 2
+Trianle: (-3 -3), (-3 -1), (-1 -1)
+Circle: (-2 -2), radius: 2
 Square: (0 5), (5 0)
+Circle: (1 1), radius: 3
