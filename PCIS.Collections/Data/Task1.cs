@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace PCIS.Collections.Data
 {
     internal class Parser
-    {
+    { 
         public IShape Parse(string str)
         {
             string[] fields = str.Split(' ');
@@ -47,15 +47,14 @@ namespace PCIS.Collections.Data
             }
         }
     }
-
     
 
     public static class Task1
     {
-        static List<IShape> list = new List<IShape>();
         static int count;
         static List<IShape> result = new List<IShape>();
         static List<IShape> totall_result = new List<IShape>();
+        static List<IShape> list = new List<IShape>();
 
         public static void sort()
         {
@@ -77,12 +76,10 @@ namespace PCIS.Collections.Data
 
         public static void Run()
         {
-     
-
             using (var fm = new BasicFileManager(@"C:\Users\Hp\Desktop\PCIS\PCIS.Collections\Data\Data.txt", BasicFileManager.IOType.Reader))
             {
                 Parser p = new Parser();
-                count = int.Parse(fm.ReadLine());
+                int count = int.Parse(fm.ReadLine());
                 for (int i = 0; i < count; i++)
                 {
                     string data = fm.ReadLine();
@@ -95,7 +92,7 @@ namespace PCIS.Collections.Data
 
             using (var fw = new BasicFileManager(@"C:\Users\Hp\Desktop\PCIS\PCIS.Collections\Data\File1.txt", BasicFileManager.IOType.Writer))
             {
-               string st;
+               //string st="";
                for (int i=0; i<count; i++)
                 {
 
@@ -116,3 +113,4 @@ namespace PCIS.Collections.Data
         }
     }
 }
+

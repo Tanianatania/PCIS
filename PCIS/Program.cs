@@ -5,8 +5,6 @@
 
 namespace PCIS
 {
-    using Models;
-    using Models.Interfaces;
 
     /// <summary>
     /// Initial point of app. Variant 1
@@ -19,7 +17,6 @@ namespace PCIS
         private static void Main()
         {
             PCIS.Collections.Data.Task1.Run();
-
         }
     }
 }

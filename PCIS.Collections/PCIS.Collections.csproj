@@ -54,5 +54,11 @@
       <Name>PCIS.Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PCIS.Models\PCIS.Models.csproj">
+      <Project>{d72af9f2-1ef7-4ea7-8335-c97a3079f671}</Project>
+      <Name>PCIS.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

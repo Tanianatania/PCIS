@@ -98,7 +98,7 @@ namespace PCIS.Models
         /// <returns>Is it true</returns>
         public bool IsQuarter3()
         {
-            if (this.first.X<=0 && this.first.Y<=0 && this.second.X<= 0 && this.second.y <= 0 && this.third.X<=0 && this.third.Y<=0)
+            if (this.first.X<=0 && this.first.Y<=0 && this.second.X<= 0 && this.second.Y <= 0 && this.third.X<=0 && this.third.Y<=0)
             {
                 return true;
             }

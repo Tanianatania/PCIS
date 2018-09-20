@@ -8,6 +8,5 @@ namespace PCIS.Collections
 {
     class Task_2
     {
-        li
     }
 }
