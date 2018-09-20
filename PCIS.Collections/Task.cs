@@ -145,16 +145,19 @@ namespace PCIS.Collections.Data
                     {
                         Circle c = list[i] as Circle;
                         fw.WriteLine($"Circle: ({c.Center.X} {c.Center.Y}), radius: {c.Radius}");
+                        fw.WriteLine($"Square: {c.GetSquare()}");
                     }
                     else if (list[i] is Square)
                     {
                         Square c = list[i] as Square;
                         fw.WriteLine($"Square: ({c.LeftTopPoint.X} {c.LeftTopPoint.Y}), ({c.RightDownPoint.X} {c.RightDownPoint.Y})");
+                        fw.WriteLine($"Square: {c.GetSquare()}");
                     }
                     else if (list[i] is Triangle)
                     {
                         Triangle c = list[i] as Triangle;
                         fw.WriteLine($"Trianle: ({c.FirstPoint.X} {c.FirstPoint.Y}), ({c.SecondPoint.X} {c.SecondPoint.Y}), ({c.ThirdPoint.X} {c.ThirdPoint.Y})");
+                        fw.WriteLine($"Square: {c.GetSquare()}");
                     }
                 }
                                  
