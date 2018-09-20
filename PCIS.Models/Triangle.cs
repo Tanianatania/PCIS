@@ -87,22 +87,9 @@ namespace PCIS.Models
             double dist1 = Point.Distance(this.first, this.second);
             double dist2 = Point.Distance(this.second, this.third);
             double dist3 = Point.Distance(this.first, this.third);
-            
+
             double square = System.Math.Sqrt(halfPerimeter * (halfPerimeter - dist1) * (halfPerimeter - dist2) * (halfPerimeter - dist3));
             return square;
-        }
-
-        /// <summary>
-        /// Checks or figure belongs to 3 quarters
-        /// </summary>
-        /// <returns>Is it true</returns>
-        public bool IsQuarter3()
-        {
-            if (this.first.X<=0 && this.first.Y<=0 && this.second.X<= 0 && this.second.Y <= 0 && this.third.X<=0 && this.third.Y<=0)
-            {
-                return true;
-            }
-            return false;
         }
     }
 }

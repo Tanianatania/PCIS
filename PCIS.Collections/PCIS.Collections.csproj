@@ -40,7 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Task1.cs" />
+    <Compile Include="IShapeExtension.cs" />
+    <Compile Include="Task1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Task 2.cs" />
   </ItemGroup>

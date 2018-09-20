@@ -51,7 +51,7 @@ namespace PCIS.Collections.Data
 
     public static class Task1
     {
-        static int count;
+        static int count=0;
         static List<IShape> result = new List<IShape>();
         static List<IShape> totall_result = new List<IShape>();
         static List<IShape> list = new List<IShape>();
@@ -79,7 +79,7 @@ namespace PCIS.Collections.Data
             using (var fm = new BasicFileManager(@"C:\Users\Hp\Desktop\PCIS\PCIS.Collections\Data\Data.txt", BasicFileManager.IOType.Reader))
             {
                 Parser p = new Parser();
-                int count = int.Parse(fm.ReadLine());
+                count = int.Parse(fm.ReadLine());
                 for (int i = 0; i < count; i++)
                 {
                     string data = fm.ReadLine();
@@ -92,10 +92,23 @@ namespace PCIS.Collections.Data
 
             using (var fw = new BasicFileManager(@"C:\Users\Hp\Desktop\PCIS\PCIS.Collections\Data\File1.txt", BasicFileManager.IOType.Writer))
             {
-               //string st="";
                for (int i=0; i<count; i++)
                 {
-
+                    if (list[i] is Circle)
+                    {
+                        Circle c = list[i] as Circle;
+                        fw.WriteLine($"Circle: ({c.Center.X} {c.Center.Y}), radius: {c.Radius}");
+                    }
+                    else if (list[i] is Square)
+                    {
+                        Square c = list[i] as Square;
+                        fw.WriteLine($"Square: ({c.LeftTopPoint.X} {c.LeftTopPoint.Y}), ({c.RightDownPoint.X} {c.RightDownPoint.Y})");
+                    }
+                    else if (list[i] is Triangle)
+                    {
+                        Triangle c = list[i] as Triangle;
+                        fw.WriteLine($"Trianle: ({c.FirstPoint.X} {c.FirstPoint.Y}), ({c.SecondPoint.X} {c.SecondPoint.Y}), ({c.ThirdPoint.X} {c.ThirdPoint.Y})");
+                    }
                 }
                                  
             }

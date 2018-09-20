@@ -81,19 +81,5 @@ namespace PCIS.Models
             double square = this.Radius * this.Radius * System.Math.PI;
             return square;
         }
-
-
-        /// <summary>
-        /// Checks or figure belongs to 3 quarters
-        /// </summary>
-        /// <returns>Is it true</returns>
-        public bool IsQuarter3()
-        {
-            if (this.center.X+this.radius<=0 && this.center.Y + this.radius <= 0)
-            {
-                return true;
-            }
-            return false;
-        }
     }
 }
