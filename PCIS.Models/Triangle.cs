@@ -87,7 +87,7 @@ namespace PCIS.Models
             double dist1 = Point.Distance(this.first, this.second);
             double dist2 = Point.Distance(this.second, this.third);
             double dist3 = Point.Distance(this.first, this.third);
-            
+
             double square = System.Math.Sqrt(halfPerimeter * (halfPerimeter - dist1) * (halfPerimeter - dist2) * (halfPerimeter - dist3));
             return square;
         }

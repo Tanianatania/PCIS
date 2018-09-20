@@ -54,7 +54,7 @@ namespace PCIS.Models
             }
             else
             {
-                this.writer = new StreamWriter(path, true);
+                this.writer = new StreamWriter(path);
             }
         }
 
