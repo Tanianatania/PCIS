@@ -44,7 +44,7 @@ namespace PCIS.Collections.Data
                     double left_y = double.Parse(fields[2]);
                     double right_x = double.Parse(fields[3]);
                     double right_y = double.Parse(fields[4]);
-                    return new Square(left_x, left_y, right_x, right_y);
+                    return new Rectangle(left_x, left_y, right_x, right_y);
 
                 case "triangle":
                     double first_x = double.Parse(fields[1]);
@@ -106,7 +106,7 @@ namespace PCIS.Collections.Data
             {
                 for (int j=i+1; j<count; j++)
                 {
-                    if (list[i].GetSquare() > list[j].GetSquare())
+                    if (list[i].GetArea() > list[j].GetArea())
                     {
                         temp = list[i];
                         list[i] = list[j];
@@ -145,19 +145,19 @@ namespace PCIS.Collections.Data
                     {
                         Circle c = list[i] as Circle;
                         fw.WriteLine($"Circle: ({c.Center.X} {c.Center.Y}), radius: {c.Radius}");
-                        fw.WriteLine($"Square: {c.GetSquare()}");
+                        fw.WriteLine($"Square: {c.GetArea()}");
                     }
-                    else if (list[i] is Square)
+                    else if (list[i] is Rectangle)
                     {
-                        Square c = list[i] as Square;
+                        Rectangle c = list[i] as Rectangle;
                         fw.WriteLine($"Square: ({c.LeftTopPoint.X} {c.LeftTopPoint.Y}), ({c.RightDownPoint.X} {c.RightDownPoint.Y})");
-                        fw.WriteLine($"Square: {c.GetSquare()}");
+                        fw.WriteLine($"Square: {c.GetArea()}");
                     }
                     else if (list[i] is Triangle)
                     {
                         Triangle c = list[i] as Triangle;
                         fw.WriteLine($"Trianle: ({c.FirstPoint.X} {c.FirstPoint.Y}), ({c.SecondPoint.X} {c.SecondPoint.Y}), ({c.ThirdPoint.X} {c.ThirdPoint.Y})");
-                        fw.WriteLine($"Square: {c.GetSquare()}");
+                        fw.WriteLine($"Square: {c.GetArea()}");
                     }
                 }
                                  
@@ -193,9 +193,9 @@ namespace PCIS.Collections.Data
                         fw.WriteLine($"Circle: ({c.Center.X} {c.Center.Y}), radius: {c.Radius}");
                         fw.WriteLine($"Perimeter: {c.GetPerimeter()}");
                     }
-                    else if (totall_result[i] is Square)
+                    else if (totall_result[i] is Rectangle)
                     {
-                        Square c = totall_result[i] as Square;
+                        Rectangle c = totall_result[i] as Rectangle;
                         fw.WriteLine($"Square: ({c.LeftTopPoint.X} {c.LeftTopPoint.Y}), ({c.RightDownPoint.X} {c.RightDownPoint.Y})");
                         fw.WriteLine($"Perimeter: {c.GetPerimeter()}");
                     }

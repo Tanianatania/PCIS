@@ -11,7 +11,7 @@ namespace PCIS.Models
     /// <summary>
     /// The instance of circle
     /// </summary>
-    public class Square : IShape
+    public class Rectangle : IShape
     {
         /// <summary>
         /// Left top point
@@ -24,13 +24,13 @@ namespace PCIS.Models
         private Point rightDownPoint;
         
         /// <summary>
-        /// Initializes a new instance of the <see cref="Square"/> class
+        /// Initializes a new instance of the <see cref="Rectangle"/> class
         /// </summary>
         /// <param name="ltx">Left top X coordinate</param>
         /// <param name="lty">Left top Y coordinate</param>
         /// <param name="rdx">Right down X coordinate</param>
         /// <param name="rdy">Right down Y coordinate</param>
-        public Square(double ltx, double lty, double rdx, double rdy)
+        public Rectangle(double ltx, double lty, double rdx, double rdy)
         {
             this.leftTopPoint = new Point(ltx, lty);
             this.rightDownPoint = new Point(rdx, rdy);
@@ -76,7 +76,7 @@ namespace PCIS.Models
         /// Calculates square of the shape
         /// </summary>
         /// <returns>The square of the shape</returns>
-        public double GetSquare()
+        public double GetArea()
         {
             double width = System.Math.Abs(this.RightDownPoint.X - this.LeftTopPoint.X);
             double height = System.Math.Abs(this.LeftTopPoint.Y - this.RightDownPoint.Y);

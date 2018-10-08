@@ -20,6 +20,6 @@ namespace PCIS.Models.Interfaces
         /// Calculates square of the shape
         /// </summary>
         /// <returns>The square of the shape</returns>
-        double GetSquare();
+        double GetArea();
     }
 }

@@ -79,7 +79,7 @@ namespace PCIS.Models
         /// Calculates square of the shape
         /// </summary>
         /// <returns>The square of the shape</returns>
-        public double GetSquare()
+        public double GetArea()
         {
             double perimeter = this.GetPerimeter();
             double halfPerimeter = perimeter / 2;

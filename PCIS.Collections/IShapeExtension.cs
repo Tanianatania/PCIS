@@ -31,9 +31,9 @@ namespace PCIS.Collections
                 }
                 return false;
             }
-            else if (shape is Square)
+            else if (shape is Rectangle)
             {
-                Square c = shape as Square;
+                Rectangle c = shape as Rectangle;
                 if (c.LeftTopPoint.Y < 0 && c.RightDownPoint.X <= 0 && c.RightDownPoint.Y < 0)
                 {
                     return true;

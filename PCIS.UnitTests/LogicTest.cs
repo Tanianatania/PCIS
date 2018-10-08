@@ -20,7 +20,7 @@ namespace PCIS.UnitTests
         {
             var circle = new Circle(0, 0, 2);
             var square = 2 * 2 * Math.PI;
-            Assert.AreEqual(circle.GetSquare(), square);
+            Assert.AreEqual(circle.GetArea(), square);
         }
 
         [TestMethod]
@@ -35,15 +35,15 @@ namespace PCIS.UnitTests
         [TestMethod]
         public void TestSquarePerimeter()
         {
-            var square = new Square(0, 4, 4, 0);
+            var square = new Rectangle(0, 4, 4, 0);
             Assert.AreEqual(square.GetPerimeter(), 16);
         }
 
         [TestMethod]
         public void TestSquareSquare()
         {
-            var square = new Square(0, 4, 4, 0);
-            Assert.AreEqual(square.GetSquare(), 16);
+            var square = new Rectangle(0, 4, 4, 0);
+            Assert.AreEqual(square.GetArea(), 16);
         }
 
         [TestMethod]
@@ -67,7 +67,7 @@ namespace PCIS.UnitTests
                 new Point(4, 0)
             );
             var square = (int)((4 * 4) / 2)-1;
-            Assert.AreEqual((int)triangle.GetSquare(), square);
+            Assert.AreEqual((int)triangle.GetArea(), square);
         }
     }
 }
