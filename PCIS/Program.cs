@@ -5,7 +5,6 @@
 
 namespace PCIS
 {
-
     /// <summary>
     /// Initial point of app. Variant 1
     /// </summary>
@@ -16,9 +15,12 @@ namespace PCIS
         /// </summary>
         private static void Main()
         {
-            PCIS.Collections.Data.Task.RunTask1();
-
-            PCIS.Collections.Data.Task.RunTask2();
+            string path1 = @"C:\Users\USER\Desktop\PCIS\PCIS.Collections\Data\Data.txt";
+            string path2 = @"C:\Users\USER\Desktop\PCIS\PCIS.Collections\Data\File1.txt";
+            string path3 = @"C:\Users\USER\Desktop\PCIS\PCIS.Collections\Data\File2.txt";
+            PCIS.Collections.Data.Task a = new Collections.Data.Task();
+            a.RunTask1(path1, path2);
+            a.RunTask2(path3);
         }
     }
 }

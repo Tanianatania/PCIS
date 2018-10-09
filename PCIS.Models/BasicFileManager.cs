@@ -33,7 +33,7 @@ namespace PCIS.Models
         /// Writer instance
         /// </summary>
         private readonly StreamWriter writer;
-        
+        private IOType type;
         #region Constructors & Finalizers
 
         /// <summary>
@@ -43,12 +43,13 @@ namespace PCIS.Models
         /// <param name="type">Operations type</param>
         public BasicFileManager(string path, IOType type)
         {
+            this.type = type;
             if (path == null || path == string.Empty)
             {
                 throw new ArgumentException("Incorrect path string");
             }
 
-            if (type == IOType.Reader)
+            if (this.type == IOType.Reader)
             {
                 this.reader = new StreamReader(path);
             }
@@ -105,6 +106,11 @@ namespace PCIS.Models
         /// <returns>Line from file (string)</returns>
         public string ReadLine()
         {
+            if (this.type == IOType.Writer)
+            {
+                throw new ArgumentException("Wrong type");
+            }
+
             lock (syncRootRead)
             {
                 return this.reader.ReadLine();
@@ -117,6 +123,11 @@ namespace PCIS.Models
         /// <param name="text">Text to write</param>
         public void WriteLine(string text)
         {
+            if (this.type == IOType.Reader)
+            {
+                throw new ArgumentException("Wrong type");
+            }
+
             lock (syncRootWrite)
             {
                 this.writer.WriteLine(text);

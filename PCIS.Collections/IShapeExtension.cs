@@ -3,18 +3,16 @@
 // </copyright>
 // <author>Tania Gutiy/author>
 
-using PCIS.Models.Interfaces;
-using PCIS.Models;
-
 namespace PCIS.Collections
 {
+    using PCIS.Models;
+    using PCIS.Models.Interfaces;
 
     /// <summary>
     /// IShape extension
     /// </summary>
     public static class IShapeExtension
     {
-
         /// <summary>
         /// check whether the item belongs 3 quarter
         /// </summary>
@@ -29,6 +27,7 @@ namespace PCIS.Collections
                 {
                     return true;
                 }
+
                 return false;
             }
             else if (shape is Rectangle)
@@ -38,6 +37,7 @@ namespace PCIS.Collections
                 {
                     return true;
                 }
+
                 return false;
             }
             else if (shape is Triangle)
@@ -47,6 +47,7 @@ namespace PCIS.Collections
                 {
                     return true;
                 }
+
                 return false;
             }
             else

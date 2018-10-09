@@ -39,6 +39,7 @@ namespace PCIS.Models
         /// <param name="one">First point</param>
         /// <param name="two">Second point</param>
         /// <returns>The distance</returns>
+        
         public static double Distance(Point one, Point two)
         {
             if (one == null || two == null)

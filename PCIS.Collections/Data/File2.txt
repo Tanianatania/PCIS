@@ -1,0 +1,4 @@
+Circle: (-2 -2), radius: 2
+Perimeter: 12,5663706143592
+Trianle: (-3 -3), (-3 -1), (-1 -1)
+Perimeter: 6,82842712474619
